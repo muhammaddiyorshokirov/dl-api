@@ -11,6 +11,7 @@ Production-ready FastAPI service for extracting media links from YouTube, Instag
 - TikTok priority chain: custom no-watermark provider -> `yt-dlp`
 - Standardized JSON response for every supported platform
 - Streaming proxy endpoint for hotlink-protected media
+- SEO-friendly web UI with animated landing pages
 - Release-friendly file logging
 
 ## Standard Response
@@ -85,6 +86,23 @@ Release mode hides raw upstream extractor messages from clients.
 Full internal errors are written to `error.txt`.
 
 ## Endpoints
+
+`GET /`
+
+Animated web UI for end users. Users can paste a media URL and instantly see available quality options, audio-only files, subtitles, images, and release-friendly errors.
+
+SEO landing pages are also available:
+
+- `/youtube-video-downloader`
+- `/instagram-downloader`
+- `/tiktok-video-downloader`
+- `/facebook-video-downloader`
+- `/x-video-downloader`
+
+SEO helper routes:
+
+- `/sitemap.xml`
+- `/robots.txt`
 
 `GET /health`
 
@@ -192,6 +210,10 @@ Swagger UI:
 
 `http://127.0.0.1:8000/docs`
 
+Web UI:
+
+`http://127.0.0.1:8000/`
+
 ## Logging
 
 Two log files are created in the project root:
@@ -216,3 +238,40 @@ This means clients only see clean public messages such as `Video topilmadi.`, wh
 4. Start with `uvicorn app.main:app --host 0.0.0.0 --port 8000`
 5. Verify `/health`
 6. Verify logs are being written to `log.txt` and `error.txt`
+
+
+---
+
+## 📬 Contact & Connect
+
+If you have any questions, feedback, or just want to say hi, feel free to reach out:
+
+[![Telegram](https://img.shields.io/badge/Telegram-2CA5E0?style=for-the-badge&logo=telegram&logoColor=white)](https://t.me/+QEtQD5HYHUUyM2Ey)
+[![Email](https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=icloud&logoColor=white)](mailto:muhammaddiyorshokirov72@email.com)
+
+## ☕ Support the Project
+
+If you find this project helpful and want to support its further development, you can buy me a coffee:
+
+[![Buy Me A Coffee](https://img.shields.io/badge/Buy%20Me%20a%20Coffee-ffdd00?style=for-the-badge&logo=buy-me-a-coffee&logoColor=black)](https://www.buymeacoffee.com/s17mj_09)
+
+> **Ethereum Network:** `0x76b0c5ec2De0A7173bcf49839f331683dAe4E941`
+
+## 🤝 Contributing
+
+Contributions are what make the open-source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
+
+1. Fork the Project
+2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the Branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+## 📜 License
+
+Distributed under the MIT License. See `LICENSE` for more information.
+
+---
+<p align="center">
+  Give a ⭐️ if this project helped you!
+</p>

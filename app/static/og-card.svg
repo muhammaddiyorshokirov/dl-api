@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0b1423"/>
+      <stop offset="50%" stop-color="#14243d"/>
+      <stop offset="100%" stop-color="#1f395f"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#53c5ff"/>
+      <stop offset="100%" stop-color="#ffd66b"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <circle cx="1050" cy="120" r="180" fill="#ffffff10"/>
+  <circle cx="150" cy="500" r="220" fill="#53c5ff18"/>
+  <rect x="80" y="90" width="150" height="150" rx="36" fill="#08111d" stroke="url(#accent)" stroke-width="10"/>
+  <path d="M122 165h66M168 128l36 37-36 37" fill="none" stroke="url(#accent)" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="80" y="340" fill="#f8fbff" font-family="Segoe UI, Trebuchet MS, sans-serif" font-size="84" font-weight="700">
+    OdeGate Media Downloader
+  </text>
+  <text x="80" y="415" fill="#cbd5e1" font-family="Segoe UI, Trebuchet MS, sans-serif" font-size="34">
+    YouTube, Instagram, TikTok va boshqa platformalar uchun
+  </text>
+  <text x="80" y="468" fill="#cbd5e1" font-family="Segoe UI, Trebuchet MS, sans-serif" font-size="34">
+    video, audio, subtitle va rasm variantlarini tez ko'rsatadigan web UI
+  </text>
+</svg>

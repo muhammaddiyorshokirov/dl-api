@@ -7,7 +7,7 @@ from time import perf_counter
 import httpx
 from fastapi import FastAPI, HTTPException, Query, Request
 from fastapi.exceptions import RequestValidationError
-from fastapi.responses import HTMLResponse, JSONResponse, PlainTextResponse, Response, StreamingResponse
+from fastapi.responses import HTMLResponse, JSONResponse, PlainTextResponse, RedirectResponse, Response, StreamingResponse
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
 
@@ -101,7 +101,7 @@ async def health() -> dict[str, str]:
 @app.get("/", response_class=HTMLResponse, include_in_schema=False, name="home_page")
 async def home_page(request: Request) -> HTMLResponse:
     context = {"request": request, **build_home_context(request)}
-    return templates.TemplateResponse("home.html", context)
+    return templates.TemplateResponse(request=request, name="home.html", context=context)
 
 
 @app.get("/robots.txt", response_class=PlainTextResponse, include_in_schema=False)
@@ -109,6 +109,11 @@ async def robots_txt(request: Request) -> PlainTextResponse:
     sitemap_url = str(request.url_for("sitemap_xml"))
     body = f"User-agent: *\nAllow: /\nSitemap: {sitemap_url}\n"
     return PlainTextResponse(body)
+
+
+@app.get("/favicon.ico", include_in_schema=False)
+async def favicon() -> RedirectResponse:
+    return RedirectResponse(url="/static/favicon.svg", status_code=307)
 
 
 @app.get("/sitemap.xml", response_class=Response, include_in_schema=False, name="sitemap_xml")
@@ -252,4 +257,4 @@ async def platform_page(request: Request, page_slug: str) -> HTMLResponse:
         raise HTTPException(status_code=404, detail="Page not found")
 
     context = {"request": request, **build_platform_context(request, page)}
-    return templates.TemplateResponse("platform.html", context)
+    return templates.TemplateResponse(request=request, name="platform.html", context=context)

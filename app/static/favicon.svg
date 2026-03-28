@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-label="OdeGate">
+  <defs>
+    <linearGradient id="g" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#53c5ff"/>
+      <stop offset="100%" stop-color="#ffd66b"/>
+    </linearGradient>
+  </defs>
+  <rect width="128" height="128" rx="28" fill="#08111d"/>
+  <circle cx="64" cy="64" r="36" fill="none" stroke="url(#g)" stroke-width="12"/>
+  <path d="M44 64h40M72 48l16 16-16 16" fill="none" stroke="url(#g)" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
